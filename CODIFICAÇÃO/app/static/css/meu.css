@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    /* background: #797c81; */
+    background-image: linear-gradient(to right, #525252, #afafaf, #657e65, #af94b9, #525252);
+    background-size: 500% 100%;
+    animation: degradeBackground 10s infinite alternate;
+    height: 100%;
+    font-family: Poppins-Regular, sans-serif;
+}
+
+@keyframes degradeBackground {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 100%;
+    }
+}
+
+
+.screen-1 {
+    background: #5f6264;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0 0 5em #3f3f44;
+    gap: 1em;
+    max-width: 600px;
+}
+
+
+
+/* responsividade */
+@media (max-width: 768px) {
+    /* .screen-1 {
+        background: #5f6264;
+        padding: 1.5em;
+        display: flex;
+        flex-direction: column;
+        border-radius: 30px;
+        box-shadow: 0 0 5em #3f3f44;
+        gap: 1em;
+        max-width: 400px;
+    } */
+
+    .navbar {
+        display: none;
+        /* Oculta o navbar em telas menores que 769px */
+    }
+
+    .screen-1 .form-group {
+        margin-bottom: 1em;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-btn {
+        display: none;
+        /* Oculta o botão de menu em telas maiores que 768px */
+    }
+}
+
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: Poppins-Bold;
+    src: url('../fonts/poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url('../fonts/poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url('../fonts/montserrat/Montserrat-Bold.ttf');
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    color: #ffffff;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #26ff00;
+}
+
+ul,
+li {
+    margin: 0px;
+    list-style-type: none;
+}
+
+.bodyLogin {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+img.alter {
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+img.icone {
+    width: 10%;
+    color: #fff;
+}
+
+.input100 {
+    width: 100%;
+    background: #e6e6e6;
+    height: 50px;
+    border-radius: 10px;
+    padding: 0 15px;
+}
+
+.navbar1 {
+    color: white;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar1 a:hover {
+    background-color: #545454;
+    border-radius: 10px;
+}
+
+
+
+.entrarMensagens {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.entrarMensagens li {
+    list-style-type: none;
+}
+
+.entrarMensagens table {
+    background-color: #fff;
+    color: #000;
+}
+
+.logoHome {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+.logotipo {
+    display: inline;
+}
+
+.imgLogo {
+    width: 40%;
+}
+
+/* SECTION MUDANCA LOGIN */
+.config {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
+.conteudo {
+    position: relative;
+    max-width: 60%;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+}
+
+.textCenter {
+    padding: 0 30px 0 68px;
+}
+
+.textCenter img {
+    width: 100px;
+    /* Adjust width as needed */
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    /* Ensure elements fill the available space */
+}
+
+.frase-login {}
+
+.screen-1 {
+    background: #5f6264;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0 0 5em #3f3f44;
+    gap: 1em;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon-field {
+    padding-left: 40px;
+    /* Ajuste a largura conforme necessário */
+}
+
+.input-icon i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #666666;
+}
+
+btnColor {
+    color: #5f6264;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #26ff00;
+}
+
+.imgRank {
+    border-radius: 10px;
+    width: 20px;
+}
+
+.container1 {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background-color: #b7acac;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.156);
+    transition: box-shadow 0.3s ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(55px);
+}
+
+.container1:hover {
+    box-shadow: 0 0 5em rgba(0, 0, 0, 0.5);
+}
+
+.form-select {
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-select:hover,
+.form-select:focus {
+    border-color: #007bff;
+}
+
+.btn-primary {
+    background-color: #007bff88;
+    color: #000;
+    border-color: #000;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 1em rgba(0, 0, 0, 0.156);
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #26ff006d;
+    color: #3f3f44;
+    border-color: #3f3f44;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.degrade {
+    width: 100%;
+    padding: 300px 0;
+    display: flex;
+
+}
+
+.tableCor {
+    background-color: #3d3d3d;
+    color: #fff;
+}
+
+.tamanhoTable {
+    background-color: #ffffff;
+    align-items: center;
+    align-content: center;
+    color: #000;
+    ;
+}
+
+.tamanhoTable:hover {
+
+    color: #5a5a5a;
+    ;
+}
+
+.thCor {}

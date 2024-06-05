@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}" />
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+    <!-- <link href="{{ url_for('static', filename='/css/bootstrap.css') }}" rel="stylesheet"> -->
+
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/meu.css') }}">
+
+    <title>Hackers School</title>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div class=""></div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="nav navbar-nav">
+                <img class="imgLogo" src="{{ url_for('static', filename='images/icons/icone1.png')}}" alt="logo">
+            </div>
+
+            <div class="navbar-nav logotipo">
+                <a class="navbar-brand" href="#">Hackers School</a>
+
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li class="active"><a class="nav-link active text-white btn btn-secondary btn-lg"
+                        href="{{ url_for('main.index') }}">Home</a>
+                </li>
+                <li><a class="nav-link active text-white btn btn-secondary btn-lg"
+                        href="{{ url_for('auth.login') }}">Login</a></li>
+                <li> <a class="nav-link text-white btn btn-secondary btn-lg"
+                        href="{{ url_for('auth.signup') }}">Cadastro</a></li>
+                <li><a class="nav-link text-white btn btn-secondary btn-lg"
+                        href="{{ url_for('main.usuario') }}">Perfil</a></li>
+                <li> <a class="nav-link text-white btn btn-secondary btn-lg" href="{{ url_for('main.rank') }}">Rank</a>
+                </li>
+                <li><a class="nav-link text-white btn btn-secondary btn-lg"
+                        href="{{ url_for('main.principal') }}">Quiz</a>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if 'username' in session %}
+                    <li>
+                        <a href="{{ url_for('main.rank') }}">
+                            <span class="btn">
+                                <img class="imgRank" src="{{ session['emblema_url'] }}" alt="Emblema do usuário">
+                            </span>
+                            <span>Usuário: {{ session['username'] }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a class="nav-link text-white btn" href="{{ url_for('auth.logout') }}">
+                        <span class="glyphicon glyphicon-log-in"></span> Sair
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="entrarMensagens text-center">
+        {% with messages = get_flashed_messages() %}
+        <!-- {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %} -->
+        {% endwith %}
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/select2/select2.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/tilt/tilt.jquery.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script> -->
+
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

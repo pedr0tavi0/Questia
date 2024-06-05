@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="bodyLogin">
+    <div class="screen-1">
+        <div class="">
+            <div>
+                <img class="alter" src="{{ url_for('static', filename='images/hackers5-2.png') }}" alt="LOGO">
+            </div>
+            <div>
+                <h4 class="text-center mb-4">Faça seu Login, venha para o Clan!</h4>
+                <div class="entrarMensagens text-center">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+            <!-- FORMULARIO FORM -->
+            <form class="validate-form" method="POST" action="{{ url_for('auth.login') }}">
+                {{ form.hidden_tag() }}
+                <div class="" data-validate="Entre com um usuário válido!">
+                    {{ form.username(class="form-control input100", placeholder="Usuário") }}
+                    <span class=""></span>
+                    <span class="">
+                        <i class="fa " aria-hidden="true"></i>
+                    </span><br>
+                </div>
+
+                <div class="" data-validate="Password is required">
+                    {{ form.password(class="form-control input100", placeholder="Senha") }}
+                    <span class=""></span>
+                    <span class="">
+                        <i class="fa" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="row d-flex justify-content-center align-content-center">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        Fazer login!
+                    </button>
+                </div>
+                <div class="text-center p-t-12">
+                    <span class="txt1">
+                        <a>{{ form.remember_me() }} Lembrar-me</a>
+
+                    </span><br>
+                    <a class="txt2" href="#">
+                        Esqueceu seu Usuário / Senha?
+                    </a>
+                </div>
+
+                <div class="text-center p-t-10">
+                    <a class="txt2" href="{{ url_for('auth.signup') }}">
+                        Crie sua conta!
+                        <i class="fa fa-long-arrow-right m-l-5"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- <div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="{{ url_for('static', filename='images/hackers53.png') }}" alt="IMG">
+            </div>
+
+            <form class="login100-form validate-form" method="POST" action="{{ url_for('auth.login') }}">
+                {{ form.hidden_tag() }}
+                <span class="login100-form-title">
+                    Faça seu Login, venha para o Clan!
+                </span>
+
+                <div class="wrap-input100 validate-input" data-validate="Entre com um usuário válido!">
+                    {{ form.username(class="input100", placeholder="Usuário") }}
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    {{ form.password(class="input100", placeholder="Senha") }}
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="submit">
+                        Logar
+                    </button>
+                </div>
+                <div class="text-center p-t-12">
+                    <span class="txt1">
+                        {{ form.remember_me() }} Lembrar-me
+                    </span>
+                    <a class="txt2" href="#">
+                        Esqueceu seu Usuário / Senha?
+                    </a>
+                </div>
+
+                <div class="text-center p-t-136">
+                    <a class="txt2" href="{{ url_for('auth.signup') }}">
+                        Crie sua conta!
+                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+{% endblock %}

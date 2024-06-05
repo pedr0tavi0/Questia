@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário</title>
+    <style>
+        .pergunta {
+            margin-bottom: 20px;
+        }
+
+        .alternativa {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Questionário</h1>
+    <form action="{{ url_for('quest.processar_respostas') }}" method="post">
+        {% for pergunta, opcoes in perguntas %}
+        <div class="pergunta">
+            <p>{{ pergunta }}</p>
+            {% for opcao in opcoes %}
+            <div class="alternativa">
+                <input type="radio" id="{{ opcao }}" name="{{ pergunta }}" value="{{ opcao }}">
+                <label for="{{ opcao }}">{{ opcao }}</label>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+        <button type="submit">Enviar Respostas</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha o tema</title>
+</head>
+
+<body>
+    <div class="container container1 mt-4">
+        <h1 class="mb-4 text-black">Escolha o tema para gerar o questionário:</h1>
+        <form action="{{ url_for('quest.gerar_questionario') }}" method="post" class="row g-3 ">
+            <div class="col-md-6 ">
+                <select name="tema" class="form-select form-control input100">
+                    <option value="software">Software</option>
+                    <option value="informatica">Informática</option>
+                    <option value="tecnologia">Tecnologia</option>
+                    <option value="programacao">Programação</option>
+                    <option value="design">Design</option>
+                    <option value="hardware">Hardware</option>
+                    <option value="redes">Redes</option>
+                    <option value="seguranca_da_informacao">Segurança da Informação</option>
+                    <option value="banco_de_dados">Banco de Dados</option>
+                    <option value="sistemas_operacionais">Sistemas Operacionais</option>
+                    <option value="internet">Internet</option>
+                    <option value="web">Web</option>
+                    <option value="mobile">Mobile</option>
+                    <option value="cloud_computing">Cloud Computing</option>
+                    <option value="inteligencia_artificial">Inteligência Artificial</option>
+                    <option value="robotica">Robótica</option>
+                    <option value="impressao_3d">Impressão 3D</option>
+                    <option value="realidade_virtual">Realidade Virtual</option>
+                    <option value="realidade_aumentada">Realidade Aumentada</option>
+                    <option value="internet_das_coisas">Internet das Coisas</option>
+                    <option value="big_data">Big Data</option>
+                    <option value="machine_learning">Machine Learning</option>
+                    <option value="chatbots">Chatbots</option>
+                    <option value="blockchain">Blockchain</option>
+                    <option value="linguagens_de_programacao">Linguagens de Programação</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="c++">C++</option>
+                    <option value="c#">C#</option>
+                    <option value="php">PHP</option>
+                    <option value="ruby">Ruby</option>
+                    <option value="swift">Swift</option>
+                    <option value="go">Go</option>
+                    <option value="ux">UX</option>
+                    <option value="ui">UI</endoption>
+                    <option value="design_grafico">Design Gráfico</option>
+                    <option value="web_design">Web Design</option>
+                    <option value="design_de_interacao">Design de Interação</option>
+                    <option value="design_de_experiencia_do_usuario">Design de Experiência do Usuário</option>
+                    <option value="tipografia">Tipografia</option>
+                    <option value="paleta_de_cores">Paleta de Cores</option>
+                    <option value="design_de_produto">Design de Produto</option>
+                    <option value="design_de_servico">Design de Serviço</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary btn-lg">Gerar Questionário</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock %}

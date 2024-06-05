@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<div class="bodyLogin">
+    <div class="screen-1">
+        <div class="">
+            <div>
+                <img class="alter" src="{{ url_for('static', filename='images/hackers5-2.png') }}" alt="LOGO">
+            </div>
+
+
+            <form class="validate-form" method="POST">
+                {{ form.hidden_tag() }}
+                <div class="" data-validate="Entre com um usuário válido!">
+                    {{ form.username(class="form-control input100", placeholder="Usuário") }}
+                    <span class=""></span>
+                    <span class="">
+                        <i class="fa " aria-hidden="true"></i>
+                    </span><br>
+                </div>
+
+                <div class="" data-validate="Password is required">
+                    {{ form.password(class="form-control input100", placeholder="Senha") }}
+                    <span class=""></span>
+                    <span class="">
+                        <i class="fa fa-flight" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="" data-validate="Password is required">
+                    {{ form.confirm_password(class="form-control input100", placeholder="Confirme Senha" ) }}
+                    <span class=""></span>
+                    <span class="">
+                        <i class="fa" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="row d-flex justify-content-center align-content-center">
+                    <button class="btn btn-primary  btn-lg  col-3" type="submit">
+                        Criar conta!
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- <div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="container">
+
+                <form class="login100-form validate-form" method="POST">
+                    {{ form.hidden_tag() }}
+                    <h2>Cadastrar</h2>
+                    <div class="">
+                        {{ form.username.label }} {{ form.username(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label }} {{ form.password(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.confirm_password.label }} {{ form.confirm_password(class="form-control") }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+{% endblock %}

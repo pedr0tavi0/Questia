@@ -1,0 +1,57 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo para o primeiro colocado (maior) */
+.first-place {
+    height: 400px;
+}
+
+/* Estilo para o segundo colocado */
+.second-place {
+    height: 300px;
+    /* Altura do segundo colocado */
+}
+
+/* Estilo para o terceiro colocado */
+.third-place {
+    height: 250px;
+    /* Altura do terceiro colocado */
+}
+
+/* Estilo para os demais colocados (retangulares menores) */
+.other-place {
+    height: 200px;
+}
+
+/* Adicionando espaço entre os cards */
+.card+.card {
+    margin-top: 20px;
+}
+
+img.imgRankMaster {
+    width: 80%;
+}
+
+img.imgRankSecond {
+    width: 60%;
+}
+
+img.imgRankTirth {
+    width: 40%;
+}
+
+img.imgRankAll {
+    width: 40%;
+}

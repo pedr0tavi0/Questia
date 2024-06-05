@@ -1,0 +1,14 @@
+<!-- app/templates/main/index.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-5 mb-5 bold">Bem-vindo à Hackers School!</h1>
+
+<div class="sombraBox">
+    <img src="{{ url_for('static', filename='images/hackers2.gif') }}" class="logoHome" alt="Logo">
+</div>
+<!-- Adicione mais conteúdo aqui, se necessário -->
+{% endblock %}
